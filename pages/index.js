@@ -3,14 +3,13 @@ import Collections from "@/components/Cards/Collection";
 import Footer from "@/components/Footer";
 import Help from "@/components/Help";
 import Hero from "@/components/Hero";
+import Layout from "@/components/layout";
 
 
 export default function Home() {
   return (
- <div>
-<section>
-  <Hero/>
-</section>
+ <Layout herotext={'👋 Hey, Need Any Help?'}>
+
 <section>
 <Collections/>
 </section>
@@ -22,9 +21,7 @@ export default function Home() {
 <section>
   <Help/>
 </section>
-<footer>
-  <Footer/>
-</footer>
- </div>
+
+ </Layout>
   );
 }

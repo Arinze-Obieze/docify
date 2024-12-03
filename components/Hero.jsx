@@ -1,24 +1,29 @@
-import React from 'react';
+import React from "react";
 import { FiSearch } from "react-icons/fi";
-import Header from './Header';
+import Header from "./Header";
 
-function Hero() {
+function Hero({herotext}) {
   return (
     <div className="relative ">
       {/* Background image */}
-      <img src="/hero.jpg" alt="Hero Image" className="w-full h-[350px] md:h-[300px] object-cover" />
+      <img
+        src="/hero.jpg"
+        alt="Hero Image"
+        className="w-full h-[350px] md:h-[300px] object-cover"
+      />
 
       {/* Overlay Content */}
 
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
       <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center text-center text-white px-4">
+        <div className="w-full absolute top-8 md:px-24 px-4">
+          <Header />
+        </div>
 
-<div className='w-full absolute top-8 md:px-24 px-4'>
-<Header/>
-</div>
-       
         {/* Header Text */}
-        <h1 className="text-xl font-bold mt-32 mb-12">👋 Hey, Need Any Help?</h1>
+        <h1 className="text-xl font-bold mt-32 mb-12">
+          {herotext}
+        </h1>
 
         {/* Search Bar */}
         <div className="flex max-w-[600px]  w-full bg-white rounded-xl overflow-hidden">
