@@ -75,7 +75,7 @@ function Header() {
                 <CiDark className='text-gray-600' />
               </div>
 
-              <div className='relative border-2 rounded-md border-gray-100 py-1 px-2 cursor-pointer'>
+              <div className='relative z-50 border-2 rounded-md border-gray-100 py-1 px-2 cursor-pointer'>
                 <div
                   className={`absolute inset-0 flex items-center justify-center transition-transform duration-300 ${
                     ismenuOpen ? 'rotate-180 opacity-0' : 'rotate-0 opacity-100'
@@ -98,7 +98,7 @@ function Header() {
 
       <div
         className={`
-          ${ismenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full hidden'}
+          ${ismenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
           bg-white text-black h-fit absolute inset-0 flex flex-col 
           justify-center mt-12 items-center mx-8 space-y-4 py-4 w-3/3
           rounded-lg shadow-lg transition-all duration-500 ease-in-out
