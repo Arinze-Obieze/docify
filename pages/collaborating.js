@@ -40,7 +40,7 @@ function Collaboration() {
               Collaborate effortlessly with our team app for seamless teamwork.
             </p>
           </div>
-          <div className="grid md:grid-cols-1 ">
+          <div className="grid grid-cols-1 ">
             {articles.map((article, index) => (
               <ArticleCard key={article.title} title={article.title} description={article.description} />
             ))}
