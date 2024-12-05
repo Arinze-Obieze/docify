@@ -32,7 +32,7 @@ function Collaboration() {
       <Header />
       <div className="bg pt-4 md:flex ">
         {/* Main Content */}
-        <div className="flex flex-col mt-12 bg-primaryBg shadow-lg border-t-2 border-gray-100 mx-4 md:mx-12 p-6 mb-12">
+        <div className="flex flex-col mt-12 bg-primaryBg shadow-lg border-t-[1px] border-border mx-4 md:mx-12 p-6 mb-12">
           <RxPerson className="text-3xl text-[#4837dc] dark:text-white" />
           <div className="mt-4 space-y-2">
             <h2 className="font-[700] text-[25px]">Collaborating</h2>
@@ -48,7 +48,7 @@ function Collaboration() {
         </div>
 
         {/* Sidebar */}
-        <div className=" bg-primaryBg shadow-lg border-t-2 pb-24 border-gray-100 py-6 px-6 sticky mt-12 mx-8 w-[400px] h-fit">
+        <div className=" bg-primaryBg shadow-lg border-t-[1px] pb-24 border-border py-6 px-6 sticky mt-12 mx-8 md:w-[400px] h-fit">
           <h2 className="text-[16px] mt-4 font-[700]">Related to Getting Started</h2>
           <div className="mt-8 space-y-4">
             {relatedTopics.map((topic, index) => (
