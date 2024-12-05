@@ -39,12 +39,13 @@ function Header() {
 
   return (
     <>
-      <div className={`${isActive('/doc/docs') || isActive('/collaborating')
-        ? 'bg-icon dark:bg-gray-900 py-4 px-8' : ''}`}>
-      <div className='w-full rounded-xl px-2 py-2 bg-primaryBg text-black'>
+      <div className={`${isActive('/doc/docs') ||  isActive('/collaborating')
+        ? 'bg-icon  py-4 px-8' : ''}`}>
+
+      <div className='w-full border-[1px] border-border rounded-xl px-2 py-2 bg-primaryBg text-black'>
           <div className='flex justify-between px-4'>
-            <div className='flex place-items-center space-x-4 font-[500]'>
-              <div className='shadow-xl border-1 border-gray-100 rounded-md px-2 py-1'>
+            <div className='flex text-primaryText place-items-center space-x-4 font-[500]'>
+              <div className='shadow-xl  border-[1px] border-border rounded-md px-2 py-1'>
                 <Link href={'/'}>
                   <AiFillBank className='text-4xl text-primaryText' />
                 </Link>
@@ -60,13 +61,13 @@ function Header() {
               </Link>
               <Link
                 href={'/faq'}
-                className={`max-md:hidden hover:text-[#4837dc] ${
+                className={`max-md:hidden  hover:text-[#4837dc] ${
                   isActive('/faq') ? 'underline text-[#4837dc]' : ''
                 }`}
               >
                 FAQs
               </Link>
-              <div className='max-md:hidden border-2 h-4 border-gray-200'></div>
+              <div className='max-md:hidden border-[1px] h-4 border-gray-200'></div>
               <Link
                 href={'/all-collections'}
                 className={`max-md:hidden hover:text-[#4837dc] ${
@@ -79,23 +80,27 @@ function Header() {
 
             <div className='text-2xl place-items-center space-x-4 flex'>
               {/* Search Bar */}
-              <div className="flex max-w-[600px] w-full bg-white rounded-xl overflow-hidden">
+              <div className="flex max-w-[600px] w-full bg-secondaryBg rounded-xl overflow-hidden">
                 <div className="relative w-full">
                   <input
                     type="text"
                     placeholder="Search Our Knowledge Base..."
-                    className="w-full border-2 max-md:hidden border-gray-100 shadow-xl text-sm py-3 px-2 text-black rounded-l-xl pl-10 focus:outline-none"
+                    className="w-full border-2 max-md:hidden border-gray-100 bg-secondaryBg shadow-xl text-sm py-3 px-2 text-black rounded-l-xl pl-10 focus:outline-none"
                   />
                   <FiSearch className="absolute font-[700] text-[#4838a1] left-4 top-1/2 transform -translate-y-1/2 text-sm" />
                 </div>
               </div>
 
           {/* Theme Toggle */}
-          <div className='border-1 shadow-lg rounded-md border-gray-100 py-1 px-2 cursor-pointer' onClick={toggleTheme}>
-                {isDarkMode ? <FiSun className='text-yellow-500' /> : <CiDark className='text-gray-600' />}
+          <div className='shadow-lg rounded-md border-[1px] border-border py-1 px-2 cursor-pointer' 
+             onClick={toggleTheme}>
+
+                {isDarkMode ? <FiSun className='text-yellow-500' /> 
+
+                : <CiDark className='text-gray-600' />}
               </div>
 
-              <div className='relative text-primaryBg z-50 border-1 rounded-md border-gray-100 py-1 px-2 cursor-pointer'>
+              <div className='relative text-primaryBg z-50 rounded-md  py- px-2 cursor-pointer'>
                 <div
                   className={`absolute inset-0 flex items-center justify-center transition-transform duration-300 ${
                     ismenuOpen ? 'rotate-180 opacity-0' : 'rotate-0 opacity-100'
@@ -119,14 +124,14 @@ function Header() {
       <div
         className={`
           ${ismenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}
-          bg-white text-black h-fit absolute inset-0 flex flex-col 
+          bg-primaryBg text-primaryText  h-fit absolute inset-0 flex flex-col 
           justify-center mt-12 items-center mx-8 space-y-4 py-4 w-3/3
-          rounded-lg shadow-lg transition-all duration-500 ease-in-out
+          rounded-lg shadow-lg shadow-gray-600 transition-all duration-500 ease-in-out
         `}
       >
         <Link
           href={'/contact'}
-          className={`text-black hover:text-[#4837dc] ${
+          className={` hover:text-[#4837dc] ${
             isActive('/') ? 'underline text-[#4837dc]' : ''
           }`}
         >

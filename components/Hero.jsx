@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import Header from "./Header";
 
 function Hero({herotext}) {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+  // Check if the current theme is dark
+  const theme = document.documentElement.getAttribute("data-theme");
+  setIsDarkMode(theme === "dark");
+}, []);
+
   return (
-    <div className="relative ">
-      {/* Background image */}
-      <img
-        src="/hero.jpg"
-        alt="Hero Image"
-        className="w-full h-[350px] md:h-[300px] object-cover"
-      />
+    <div className="relative">
+      {/* Conditional rendering for the background */}
+      {isDarkMode ? (
+        <div className="w-full h-[350px] md:h-[300px] bg-secondaryBg"></div>
+      ) : (
+        <img
+          src="/hero.jpg"
+          alt="Hero Image"
+          className="w-full h-[350px] md:h-[300px] object-cover"
+        />
+      )}
 
       {/* Overlay Content */}
 

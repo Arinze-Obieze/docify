@@ -15,6 +15,7 @@ module.exports = {
         primaryBg: 'var(--primary-bg-color)',
         secondaryBg: 'var(--secondary-bg-color)',
         icon: 'var(--link-button-bg-color)',
+        border: 'var(--border-color)',
       },
     },
   },

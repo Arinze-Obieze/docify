@@ -14,7 +14,7 @@ function Footer() {
   ];
 
   return (
-    <div className="bg-gray-100 pt-12 pb-6">
+    <div className="bg-secondaryBg pt-12 pb-6">
       <div>
         <div className="flex max-md:flex-col max-md:place-items-center max-md:space-y-8 justify-around">
           {/* Navigation Links */}

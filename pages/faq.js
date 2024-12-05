@@ -3,12 +3,12 @@ import React from 'react';
 import { PiCurrencyDollarLight } from "react-icons/pi";
 function FaqCard({ icon: Icon, title, description }) {
   return (
-    <div className="flex flex-col shadow-lg rounded-md border-2 mx-4 px-2 py-4 space-y-4 border-gray-100">
-      <div className="border-2 border-gray-100 w-fit px-2 py-1">
+    <div className="flex flex-col shadow-lg shadow-primaryBg border-[1px] rounded-md border-border mx-4 px-2 py-4 space-y-4 ">
+      <div className="border-[1px] rounded-md border-border w-fit px-2 py-1">
         {Icon}
       </div>
       <h2 className="text-[18px] font-bold">{title}</h2>
-      <p className="text-gray-600 leading-7">{description}</p>
+      <p className="text-secondaryText leading-7">{description}</p>
     </div>
   );
 }
