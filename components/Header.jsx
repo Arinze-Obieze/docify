@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { AiFillBank } from "react-icons/ai";
 import { TbMenu } from "react-icons/tb";
 import { IoCloseSharp } from "react-icons/io5"; // Import the close icon
@@ -6,28 +6,47 @@ import { CiDark } from "react-icons/ci";
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FiSearch } from 'react-icons/fi';
+import { FiSun } from "react-icons/fi"; 
 
 function Header() {
   const [ismenuOpen, setIsMenuOpen] = useState(false);
+  const [isDarkMode,setIsDarkMode] =useState(false)
+  
+ // Toggle theme and save preference
+ const toggleTheme = () => {
+  const newTheme = !isDarkMode;
+  setIsDarkMode(newTheme);
+  document.documentElement.setAttribute('data-theme', newTheme ? 'dark' : 'light');
+  localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+};
 
+  useEffect(() => {
+    // Get saved theme from localStorage
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const isDark = savedTheme === 'dark';
+    setIsDarkMode(isDark);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+  
   const toggleIsMenuOpen = () => {
     setIsMenuOpen(!ismenuOpen);
   };
 
   const router = useRouter();
-  console.log('Menu state:', ismenuOpen);
+  // console.log('Menu state:', ismenuOpen);
 
   const isActive = (path) => router.pathname === path;
 
   return (
     <>
-      <div className={`${isActive('/doc/docs') ? 'bg-[#4837dc] py-4 px-8' : ''}`}>
-        <div className='w-full rounded-xl px-2 py-2 bg-white text-black'>
+      <div className={`${isActive('/doc/docs') || isActive('/collaborating')
+        ? 'bg-icon dark:bg-gray-900 py-4 px-8' : ''}`}>
+      <div className='w-full rounded-xl px-2 py-2 bg-primaryBg text-black'>
           <div className='flex justify-between px-4'>
             <div className='flex place-items-center space-x-4 font-[500]'>
-              <div className='shadow-xl border-2 border-gray-100 rounded-md px-2 py-1'>
+              <div className='shadow-xl border-1 border-gray-100 rounded-md px-2 py-1'>
                 <Link href={'/'}>
-                  <AiFillBank className='text-4xl text-black' />
+                  <AiFillBank className='text-4xl text-primaryText' />
                 </Link>
               </div>
 
@@ -71,24 +90,25 @@ function Header() {
                 </div>
               </div>
 
-              <div className='border-2 rounded-md border-gray-100 py-1 px-2'>
-                <CiDark className='text-gray-600' />
+          {/* Theme Toggle */}
+          <div className='border-1 shadow-lg rounded-md border-gray-100 py-1 px-2 cursor-pointer' onClick={toggleTheme}>
+                {isDarkMode ? <FiSun className='text-yellow-500' /> : <CiDark className='text-gray-600' />}
               </div>
 
-              <div className='relative z-50 border-2 rounded-md border-gray-100 py-1 px-2 cursor-pointer'>
+              <div className='relative text-primaryBg z-50 border-1 rounded-md border-gray-100 py-1 px-2 cursor-pointer'>
                 <div
                   className={`absolute inset-0 flex items-center justify-center transition-transform duration-300 ${
                     ismenuOpen ? 'rotate-180 opacity-0' : 'rotate-0 opacity-100'
                   }`}
                 >
-                  <TbMenu onClick={toggleIsMenuOpen} className="text-gray-600" />
+                  <TbMenu onClick={toggleIsMenuOpen} className="text-gray-500" />
                 </div>
                 <div
                   className={`absolute inset-0 flex items-center justify-center transition-transform duration-300 ${
                     ismenuOpen ? 'rotate-0 opacity-100' : 'rotate-180 opacity-0'
                   }`}
                 >
-                  <IoCloseSharp onClick={toggleIsMenuOpen} className="text-gray-600" />
+                  <IoCloseSharp onClick={toggleIsMenuOpen} className="text-gray-500" />
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import Articles from "@/components/Cards/Articles";
+import Articles from "@/components/Articles";
 import Collections from "@/components/Cards/Collection";
 import Footer from "@/components/Footer";
 import Help from "@/components/Help";

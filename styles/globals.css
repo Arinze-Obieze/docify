@@ -3,3 +3,26 @@
 @tailwind utilities;
 
 
+/* globals.css */
+:root {
+    --primary-text-color: black;
+    --secondary-text-color: #6b7280; /* Tailwind's text-gray-500 */
+    --primary-bg-color: #ffffff;
+    --secondary-bg-color: #f3f4f6;
+    --link-button-bg-color:#4837dc;
+  }
+  
+  [data-theme='dark'] {
+    --primary-text-color: white;
+    --secondary-text-color: #fffdfd;
+    --primary-bg-color: #000000;
+    --secondary-bg-color: #0a0a0a;
+    --link-button-bg-color:#090909;
+  }
+  
+  /* Apply the colors globally */
+  body {
+    color: var(--primary-text-color);
+    background-color: var(--primary-bg-color);
+  }
+  

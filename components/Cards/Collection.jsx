@@ -35,7 +35,7 @@ function Collections() {
 
   return (
 <div>
-<h1 className='mt-12 ml-8 font-[700] text-[26px] mb-4'>Browse by Categories</h1>
+<h1 className='mt-12 ml-8 font-[700] bg-primaryBg text-[26px] mb-4'>Browse by Categories</h1>
   
 <div className="w-full grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:px-8 px-4 pb-12 items-center">
     

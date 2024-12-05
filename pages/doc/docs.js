@@ -12,7 +12,7 @@ function Docs() {
 <>
 <Header/>
 
-<div className=' pt-4 flex '>
+<div className=' pt-4 flex'>
 
 <div className='bg-white shadow-lg border-t-2 border-gray-100 mx-4 md:mx-12 mt-12 p-6 mb-12'>
 
