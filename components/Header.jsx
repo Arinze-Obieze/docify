@@ -40,7 +40,7 @@ function Header() {
   return (
     <>
       <div className={`${isActive('/doc/docs') ||  isActive('/collaborating')
-        ? 'bg-icon  py-4 px-8' : ''}`}>
+        ? 'bg-icon  py-4 px-8' : 'py-4 px-8'}`}>
 
       <div className='w-full border-[1px] border-border rounded-xl px-2 py-2 bg-primaryBg text-black'>
           <div className='flex justify-between px-4'>
